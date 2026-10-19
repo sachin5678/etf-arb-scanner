@@ -1,0 +1,102 @@
+{
+  "universe": {
+    "topLiquidN": 100,
+    "categories": ["EQUITY", "COMMODITY"],
+    "minTurnoverRs": 0,
+    "sanityMaxInavNavPct": 25
+  },
+  "scan": {
+    "intervalSec": 20,
+    "marketOpenTime": "09:15",
+    "marketCloseTime": "15:35",
+    "ignoreMarketHours": false
+  },
+  "streamer": {
+    "enabled": true,
+    "maxStreams": 12,
+    "minHoldSec": 90,
+    "heartbeatSec": 45,
+    "quietBookSec": 300,
+    "maxBookAgeSec": 600,
+    "reconnectMinMs": 2000,
+    "reconnectMaxMs": 45000
+  },
+  "candidates": {
+    "prefilterDiscountPct": 0.15,
+    "minExecDiscountPct": 0.25,
+    "maxSpreadPct": 0.1
+  },
+  "thresholds": {
+    "minNetProfitPct": 0.2,
+    "costSafetyMult": 2.0,
+    "zMin": 2.0,
+    "zStdFloor": 0.02,
+    "requireUnusual": true,
+    "minHistorySamples": 30,
+    "structuralMinSamples": 3,
+    "coldStartMinDiscountPct": 0.4,
+    "structuralMeanPct": 0.25,
+    "structuralMarginPct": 0.1,
+    "maxInavAgeSec": 60,
+    "freshInavSec": 30,
+    "entryScore": 75
+  },
+  "scenarios": {
+    "primary": "B",
+    "partialFraction": 0.5
+  },
+  "costs": {
+    "brokeragePct": 0,
+    "brokerageFlatPerOrder": 0,
+    "sttSellPct": 0.001,
+    "exchangeTxnPct": 0.00297,
+    "sebiPct": 0.0001,
+    "gstPct": 18,
+    "stampDutyBuyPct": 0.005,
+    "dpChargeFlatPerSell": 15.34,
+    "slippagePct": 0.02
+  },
+  "position": {
+    "totalCapitalRs": 500000,
+    "capitalPerTradeRs": 50000,
+    "maxOpenTrades": 3,
+    "maxTradesPerDay": 10,
+    "dailyLossLimitRs": 2500,
+    "minRequiredQtyFactor": 1.0
+  },
+  "exits": {
+    "exitDiscountPct": 0.1,
+    "profitTargetNetPct": 0.3,
+    "maxHoldMin": 30,
+    "inavMoveInvalidationPct": 0.5
+  },
+  "alerts": {
+    "enabled": true,
+    "cooldownMin": 30,
+    "maxPerScan": 3,
+    "sendExits": true,
+    "scoreWeights": {
+      "unusualDeviation": 20,
+      "zscore": 15,
+      "liquidity": 15,
+      "freshInav": 10,
+      "convergenceHistory": 10,
+      "tightSpread": 10,
+      "marketActive": 10,
+      "depthVsTarget": 10
+    }
+  },
+  "history": {
+    "windowDays": 10,
+    "maxSamplesPerSymbol": 2000,
+    "sampleEveryScans": 3,
+    "warmupScans": 12
+  },
+  "paper": {
+    "enabled": true
+  },
+  "logging": {
+    "logAllCandidates": true,
+    "console": true
+  }
+}

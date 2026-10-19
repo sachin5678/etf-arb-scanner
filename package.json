@@ -1,0 +1,15 @@
+{
+  "name": "etf-arb-scanner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Intraday ETF arbitrage/opportunity scanner for NSE India: live iNAV vs executable order-book prices (NSE streamer), full cost model, historical deviation stats, scoring, paper trading and Telegram alerts.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node scanner.js",
+    "once": "node scanner.js --once",
+    "dry": "node scanner.js --once --dry",
+    "report": "node report.js"
+  }
+}
